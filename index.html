@@ -4,37 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catch the box</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Catch The Box</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="game-wrapper">
+    <main class="game-wrapper">
+        <h1 id="gameTitle">🎯 Catch The Box</h1>
 
-        <h1>🎯 Catch The Box</h1>
+        <div class="player-box" id="startPanel">
+            <input type="text" id="playerName" placeholder="Enter your name" autocomplete="off">
+            <button id="startBtn">Start Game</button>
+        </div>
 
-        <div class="info">
+        <div class="end-stats" id="endStats">
+            <input type="text" id="finalPlayerName" readonly>
+            <input type="text" id="finalScoreBox" readonly>
+        </div>
+
+        <div class="info" id="gameInfo">
             <div class="score-box">
                 Score: <span id="score">0</span>
             </div>
 
             <div class="time-box">
-                Time: <span id="time">10</span>
+                Time: <span id="time">20</span>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="gameArea">
             <div class="box"></div>
         </div>
-        <div id="container">
-            <h2>GAME OVER 💀</h2>
-            <p>Your Score: <span id="finalScore">0</span></p>
-            <button id="restart">Restart</button>
-        </div>
-    </div>
 
+        <h2 id="leaderboardTitle">🏆 Leaderboard</h2>
+
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button id="restart">Play Again</button>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-
 
 </html>
